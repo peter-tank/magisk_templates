@@ -1,0 +1,27 @@
+#/sys/devices/platform/soc(/.*)? u:object_r:tethering_service:s0
+#SELinux : avc:  denied  { find } for pid=4475 uid=10069 name=tethering scontext=u:r:permissioncontroller_app:s0:c69,c256,c512,c768 tcontext=u:object_r:tethering_service:s0 tclass=service_manager permissive=0
+#allow untrusted_app default_android_service:service_manager { find }
+#file_contexts
+#logcat | grep " SELinux" | sed -e 's/^.*avc: *\([^ ]*\).*{\([^}]*\)}\(.*\)scontext=u:r:\([^:]*\).* tcontext=u:object_r:\([^:]*\).*tclass=\([^ ]*\).*\(permissive=.*\)$/\3\n\1 \7 allow \4 \5 \6 {\2}/p'
+#logcat | grep " SELinux" | sed -ne 's/^.*avc: *\([^ ]*\).*{\([^}]*\)}.*scontext=u:r:\([^:]*\).*tcontext=u:object_r:\([^:]*\).*tclass=\([^ ]*\).*\(permissive=.*\)$/\1 \6 allow \3 \4 \5 {\2}/p' | grep denied | grep permissive=0 | sort | uniq | sed -e 's/denied //' -e 's/permissive=. //'
+#permissioncontroller_app.te
+allow hal_lcmctl_default hal_vcode_hwservice hwservice_manager { find }
+allow hal_lcmctl_default hal_vcode_default binder { call }
+allow mediaprovider hal_vperf_hwservice hwservice_manager { find }
+allow mediaprovider hal_vperf_default binder { call }
+allow mediaprovider_app hal_vperf_default binder { call }
+allow mediaprovider_app hal_vperf_hwservice hwservice_manager { find }
+allow permissioncontroller_app hal_vperf_hwservice hwservice_manager { find }
+allow permissioncontroller_app hal_vperf_default binder { call }
+allow permissioncontroller_app nightmode_service service_manager { find }
+allow permissioncontroller_app tethering_service service_manager { find }
+allow permissioncontroller_app vendor_vivoperf_service service_manager { find }
+allow shell hal_vperf_hwservice hwservice_manager { find }
+allow shell hal_vperf_default binder { call }
+allow system_app vendor_hal_diaghal_hwservice hwservice_manager { find }
+#allow logd magisk process { getattr }
+allow zygote device file { read open write }
+allow zygote proc_cmdline file { read }
+allow migrate_legacy_obb_data apk_data_file file { read }
+allow migrate_legacy_obb_data dalvikcache_data_file file { read write }
+allow migrate_legacy_obb_data user_profile_data_file file { read }

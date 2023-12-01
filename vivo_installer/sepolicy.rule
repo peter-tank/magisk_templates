@@ -1,0 +1,23 @@
+#/sys/devices/platform/soc(/.*)? u:object_r:tethering_service:s0
+#SELinux : avc:  denied  { find } for pid=4475 uid=10069 name=tethering scontext=u:r:permissioncontroller_app:s0:c69,c256,c512,c768 tcontext=u:object_r:tethering_service:s0 tclass=service_manager permissive=0
+#file_contexts
+#logcat | grep " SELinux" | sed -e 's/^.*avc: *\([^ ]*\).*{\([^}]*\)}\(.*\)scontext=u:r:\([^:]*\).* tcontext=u:object_r:\([^:]*\).*tclass=\([^ ]*\).*\(permissive=.*\)$/\3\n\1 \7 allow \4 \5 \6 {\2}/p'
+#logcat | grep "avc" | sed -ne 's/^.*avc: *\([^ ]*\).*{\([^}]*\)}.*scontext=u:r:\([^:]*\).*tcontext=u:object_r:\([^:]*\).*tclass=\([^ ]*\).*\(permissive=.*\)$/\1 \6 allow \3 \4 \5 {\2}/p' | grep denied | grep permissive=0 | sort | uniq | sed -e 's/denied //' -e 's/permissive=. //'
+#permissioncontroller_app.te
+#allow atcid_common system_data_root_file dir { write }
+#allow crash_dump init process { ptrace }
+#allow fsck fsck capability { kill }
+#allow init vivo_hal_fingerprint process { ptrace }
+#allow iorap_prefetcherd backup_data_file dir { search }
+#allow kernel kernel capability { kill }
+#allow platform_app cms_key_file file { getattr }
+#allow platform_app rootfs dir { read }
+#allow platform_app system_data_root_file dir { setattr }
+#allow system_app vendor_diag-router binder { call }
+#allow tee tee qipcrtr_socket { create }
+#allow vdc vdc capability { kill }
+#allow vendor_qti_init_shell qg_log_proc file { write }
+#allow vendor_thermal-engine proc_pem dir { search }
+#allow vivo_daemon vivo_daemon capability { sys_ptrace }
+#allow vivo_em_svr_vendor cache_file dir { search }
+#allow zygote proc_cmdline file { open }

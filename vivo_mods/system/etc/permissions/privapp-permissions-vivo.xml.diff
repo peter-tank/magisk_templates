@@ -1,0 +1,19 @@
+700,701d699
+<         <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+<         <permission name="android.permission.MANAGE_DEVICE_ADMINS"/>
+711d708
+<         <permission name="android.permission.INSTALL_SELF_UPDATES"/>
+715d711
+<         <permission name="android.permission.INSTALL_PACKAGES"/>
+717,718d712
+<         <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+<         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+721,722d714
+<         <permission name="android.permission.STOP_APP_SWITCHES"/>
+<         <permission name="android.permission.UPDATE_DEVICE_STATS"/>
+724,726d715
+<         <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+<         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+<         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+738d726
+< 	<permission name="android.permission.INSTALL_SELF_UPDATES"/>

@@ -1,0 +1,15 @@
+#ro.adb.secure=0
+#ro.secure=0
+#persist.config.usb.config=adb
+#persist.sys.usb.config=adb
+#ro.provisioned=1
+ro.product.dmtklog=false
+ro.vivo.ctcc.dm.name=
+ro.vivo.cmcc.dm.name=
+ro.vivo.unicom.dm.name=
+ro.vivo.vgc.activate=false
+persist.sys.disable_rescue=false
+persist.sys.is_root=0
+persist.sys.vivofirewall=0
+persist.sys.shipped=1
+ro.com.google.clientidbase=android-vivo

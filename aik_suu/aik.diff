@@ -1,0 +1,41 @@
+--- /system/bin/aik	2023-11-22 20:25:29.000000000 +0800
++++ aik	2023-11-22 22:23:30.798999836 +0800
+@@ -4,6 +4,7 @@
+ 
+ aik=/data/local/AIK-mobile;
+ bb=$aik/bin/busybox;
++suu=suu;
+ 
+ case $1 in
+   --restore)
+@@ -10,9 +11,9 @@
+     # fix shortcut script
+-    imgmnt=$(su -c "(ls -d /magisk || ls -d /sbin/.core/img || ls -d /sbin/.magisk/img || ls -d /data/adb/modules) 2>/dev/null");
++    imgmnt=$($suu -c "(ls -d /magisk || ls -d /sbin/.core/img || ls -d /sbin/.magisk/img || ls -d /data/adb/modules) 2>/dev/null");
+     [ "$imgmnt" ] && rbmsg=' \(reboot required\)';
+     # work around Magisk Canary 1930x issue where every second su -c fails
+-    su -c exit 2>/dev/null;
+-    suu -c " \
++    $su -c exit 2>/dev/null;
++    $suu -c " \
+       chmod 755 $aik/bin/aik; \
+       chown root:root $aik/bin/aik; \
+       if [ -e /su ]; then \
+@@ -36,7 +37,7 @@
+   ;;
+   --uninstall)
+     # remove AIK-mobile and shortcut script
+-    su -c " \
++    $suu -c " \
+       $aik/cleanup.sh --quiet; \
+       if [ -e /su -o -e /sbin/supersu -o -e /magisk -o -e /sbin/.core/img -o -e /sbin/.magisk/img -o -e /data/adb/modules ]; then \
+         rm -rf $aik /su/bin/aik /sbin/supersu/bin/aik /magisk/aik-mobile /sbin/.core/img/aik-mobile /sbin/.magisk/img/aik-mobile /data/adb/modules/aik-mobile; \
+@@ -55,7 +56,7 @@
+   *)
+     # go local and request root
+     cd $aik;
+-    PATH="$PATH:$aik" su;
++    PATH="$PATH:$aik" $suu;
+   ;;
+ esac;
+ 

@@ -1,0 +1,7 @@
+id=vivo_mods
+name=Vivo packages cleanup
+version=1.0
+versionCode=1
+author=tank.dr
+description=Force remove system botware
+updateJson=

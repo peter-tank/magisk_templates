@@ -1,0 +1,11 @@
+--- remount.sh	2023-11-22 23:08:04.526999524 +0800
++++ /storage/emulated/0/Magisk/modules/aik_suu/remount.sh	2023-11-22 23:06:56.602999550 +0800
+@@ -22,7 +22,7 @@
+ [ ! -f $bb ] && bb=busybox;
+ 
+ su=sh;
+-$bb ps | $bb grep -v grep | $bb grep -q zygote && su="su -mm";
++$bb ps | $bb grep -v grep | $bb grep -q zygote && su="suu -mm";
+ 
+ --mount-only() {
+   $bb mount | $bb grep -q " $aik/ramdisk " && return 0;

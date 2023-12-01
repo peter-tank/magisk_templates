@@ -1,0 +1,471 @@
+14,17d13
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+27,31d22
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+37,39d27
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+51d38
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+58,68d44
+<          <permission name="android.permission.READ_CALENDAR"/>
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.READ_CALL_LOG"/>
+<          <permission name="android.permission.READ_PHONE_STATE"/>
+<          <permission name="android.permission.READ_CONTACTS"/>
+75,80d50
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+87,92d56
+<          <permission name="android.permission.READ_CALENDAR"/>
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+99,102d62
+<          <permission name="android.permission.READ_CALENDAR"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.CALL_PHONE"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+105,106d64
+<          <permission name="android.permission.WRITE_CALENDAR"/>
+<          <permission name="android.permission.RECORD_AUDIO"/>
+111d68
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+121,122d77
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+124d78
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+126d79
+<          <permission name="android.permission.READ_CONTACTS"/>
+131d83
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+136d87
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+138d88
+<          <permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+143,148d92
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.READ_CONTACTS"/>
+155,160d98
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+<          <permission name="android.permission.WRITE_CALL_LOG"/>
+162d99
+<          <permission name="android.permission.READ_CONTACTS"/>
+169,174d105
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.CALL_PHONE"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+189,192c120
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+---
+> 
+198d125
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+210,213d136
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+219d141
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+228,234d149
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+236d150
+<          <permission name="android.permission.READ_CONTACTS"/>
+242,243d155
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.CALL_PHONE"/>
+245,248d156
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+250d157
+<          <permission name="android.permission.READ_CONTACTS"/>
+252d158
+<          <permission name="android.permission.WRITE_CALENDAR"/>
+265,268d170
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+274,282d175
+<          <permission name="android.permission.READ_CALENDAR"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+<          <permission name="android.permission.READ_CALL_LOG"/>
+<          <permission name="android.permission.READ_CONTACTS"/>
+284d176
+<          <permission name="android.permission.WRITE_CALENDAR"/>
+286d177
+<          <permission name="android.permission.RECORD_AUDIO"/>
+290,294d180
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+301,302d186
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+304,310d187
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+312d188
+<          <permission name="android.permission.READ_CONTACTS"/>
+314d189
+<          <permission name="android.permission.WRITE_CALENDAR"/>
+316,317d190
+<          <permission name="android.permission.RECORD_AUDIO"/>
+<          <permission name="android.permission.READ_CALL_LOG"/>
+320,321d192
+<          <permission name="android.permission.READ_CALENDAR"/>
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+324,325d194
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+341,342d209
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+352,353d218
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+356,358d220
+<          <permission name="android.permission.READ_CALENDAR"/>
+<          <permission name="android.permission.WRITE_CONTACTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+360d221
+<          <permission name="android.permission.READ_CONTACTS"/>
+362d222
+<          <permission name="android.permission.WRITE_CALENDAR"/>
+379,384d238
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.WRITE_CONTACTS"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+386d239
+<          <permission name="android.permission.READ_CONTACTS"/>
+391,396d243
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.READ_CALL_LOG"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+398d244
+<          <permission name="android.permission.READ_CONTACTS"/>
+404d249
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+407d251
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+415,422d258
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+424d259
+<          <permission name="android.permission.READ_CONTACTS"/>
+429d263
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+434d267
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+445,447d277
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+453d282
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+471,476d299
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+<          <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+481d303
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+485d306
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+489d309
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+494,500d313
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+502d314
+<          <permission name="android.permission.READ_CONTACTS"/>
+512d323
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+520,524d330
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+527,530d332
+<          <permission name="android.permission.CALL_PHONE"/>
+<          <permission name="android.permission.READ_CONTACTS"/>
+<          <permission name="android.permission.READ_PHONE_STATE"/>
+<          <permission name="android.permission.RECORD_AUDIO"/>
+535d336
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+540,548d340
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.CALL_PHONE"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+550d341
+<          <permission name="android.permission.READ_CONTACTS"/>
+565,572d355
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+574d356
+<          <permission name="android.permission.READ_CONTACTS"/>
+580,583d361
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+589d366
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+595d371
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+601,603d376
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+609,614d381
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.PROCESS_OUTGOING_CALLS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+625,634d391
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.RECEIVE_SMS"/>
+<          <permission name="android.permission.WRITE_CONTACTS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+636d392
+<          <permission name="android.permission.READ_CONTACTS"/>
+641d396
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+643d397
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+646d399
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+655,662d407
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.WRITE_CONTACTS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_CALL_LOG"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+664,665d408
+<          <permission name="android.permission.CALL_PHONE"/>
+<          <permission name="android.permission.READ_CONTACTS"/>
+667d409
+<          <permission name="android.permission.WRITE_CALENDAR"/>
+672d413
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+676,678d416
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+685d422
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+688,689d424
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+713d447
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+718d451
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+721,722d453
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+736,739d466
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+745,753d471
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.CALL_PHONE"/>
+<          <permission name="android.permission.WRITE_CONTACTS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+761,762d478
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+764,765d479
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+773,776d486
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+782d491
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+787,788d495
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+790,792d496
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+799,804d502
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+811d508
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+822,826d518
+<          <permission name="android.permission.WRITE_CONTACTS"/>
+<          <permission name="android.permission.CAMERA"/>
+<          <permission name="android.permission.SEND_SMS"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.ACCESS_MEDIA_LOCATION"/>
+832d523
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+834,835d524
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+857,859d545
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+863,868d548
+<          <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+<          <permission name="android.permission.WRITE_CONTACTS"/>
+<          <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<          <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<          <permission name="android.permission.READ_SMS"/>
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+874d553
+<          <permission name="android.permission.WRITE_CALENDAR"/>
+876d554
+<          <permission name="android.permission.READ_CALL_LOG"/>
+881d558
+<          <permission name="android.permission.GET_ACCOUNTS"/>
+886d562
+<         <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="true"/>
+889d564
+<         <permission name="android.permission.RECEIVE_SMS"/>
+891d565
+<         <permission name="android.permission.CAMERA"/>
+893,902d566
+<         <permission name="android.permission.RECEIVE_MMS"/>
+<         <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" fixed="true"/>
+<         <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="true"/>
+<         <permission name="android.permission.PROCESS_OUTGOING_CALLS"/>
+<         <permission name="android.permission.SEND_SMS"/>
+<         <permission name="android.permission.READ_CALL_LOG"/>
+<         <permission name="android.permission.READ_SMS"/>
+<         <permission name="android.permission.CALL_PHONE"/>
+<         <permission name="android.permission.RECORD_AUDIO"/>
+<         <permission name="android.permission.WRITE_CALL_LOG"/>
+904d567
+<         <permission name="android.permission.BODY_SENSORS"/>
+906,907d568
+<         <permission name="android.permission.WRITE_CONTACTS"/>
+<         <permission name="android.permission.READ_CONTACTS"/>
+914,915d574
+<         <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+<         <permission name="android.permission.ANSWER_PHONE_CALLS"/>
+917d575
+<         <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+921d578
+<         <permission name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+925c582
+< </grants>
+\ No newline at end of file
+---
+> </grants>

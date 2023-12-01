@@ -1,0 +1,23 @@
+--- ./tsu.orig	2023-11-20 09:17:34.046639377 +0800
++++ ../usr/bin/tsu	2023-11-20 09:22:09.622639272 +0800
+@@ -278,7 +278,7 @@
+ 	STARTUP_SCRIPT="$ROOT_SHELL"
+ fi
+ 
+-SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su")
++SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/product/bin/suu")
+ 
+ # On some systems with other root methods `/sbin` is inacessible.
+ if [[ -x "/sbin" ]]; then
+@@ -310,9 +310,9 @@
+ 
+ ### ----- MAGISKSU
+ # shellcheck disable=SC2117
+-if [[ -z "$SKIP_SBIN" && "$(/sbin/su -v)" == *"MAGISKSU" ]]; then
++if [[ -z "$SKIP_SBIN" && "$(/product/bin/suu -v)" == *"MAGISKSU" ]]; then
+ 	# We are on Magisk su
+-	su_args=("/sbin/su")
++	su_args=("/product/bin/suu")
+ 	[[ -z "$SWITCH_USER" ]] || su_args+=("$SWITCH_USER")
+ 
+ 	if [[ -n "$ENVIRONMENT_PRESERVE" ]]; then

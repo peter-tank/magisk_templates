@@ -1,0 +1,14 @@
+ro.com.google.gmsversion=11_202011
+ro.vivo.product.overseas=yes
+ro.vendor.vivo.product.overseas=yes
+ro.product.country.region=ID
+ro.vendor.val.product.country.region=ID
+ro.vivo.system.region.version=W40
+ro.product.locale=en-US
+persist.sys.locale=en-US
+#ro.device.demo=1
+#ro.adb.secure=0
+#ro.secure=0
+#persist.config.usb.config=adb
+#persist.sys.usb.config=adb
+#ro.provisioned=1

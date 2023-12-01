@@ -1,0 +1,4 @@
+264c264
+< ro.vendor.vivo.product.overseas=no
+---
+> ro.vendor.vivo.product.overseas=yes
