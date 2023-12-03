@@ -56,9 +56,9 @@ get_data_app() {
     $BINPATH/pm list packages -f 2>/dev/null | grep -F ".apk=$app" | sed -ne "s|^package:$pa\(.*\)${fn:-base.apk}=[^=]*$|$pa\1|p";
   else
     if test -z "$fn"; then
-      find "${pa:-"/data/app"}" -mindepth ${dep:-1} -maxdepth ${dep:-2} -type d -name "$app" 2>/dev/null;
+      find "${pa:-"/data/app"}" -mindepth ${dep:-1} -maxdepth ${dep:-1} -type d -name "$app" 2>/dev/null;
     else
-      find "${pa:-"/data/app"}" -mindepth ${dep:-1} -maxdepth ${dep:-2} -type f -name "$fn" 2>/dev/null;
+      find "${pa:-"/data/app"}" -mindepth ${dep:-1} -maxdepth ${dep:-1} -type f -name "$fn" 2>/dev/null;
     fi
   fi
 }
@@ -224,7 +224,7 @@ DC=10;BS=1;
 clean_dmesg() {
 local bn=$1 id=$2;
 test -d "%bn" && logf_print 255 "SELinux: dont messup." && return;
-awk 'BEGIN{FS="]";epoch="[";ok=0;split("permissive=,ksys_umount,logd,NetlinkEvent:,VIVO_TS,_VOTER,_charger,do_mount,_vote:,pinctrl,swrm_,bolero",a ,",");}
+awk 'BEGIN{FS="]";epoch="[";ok=0;split("] msm_,permissive=,do_mount,logdr:",a ,",");}
   /^\[[ 0-9.]*\]/{ok=0; if($1 > epoch) {epoch=$1; ok=1; for(i in a) {if(match($0, a[i]) != 0) {ok=0;break;}}}}
   /.*/{ if(ok){print;}}' $bn.* > ./dmesg$id
 rm -f $bn.* 2>/dev/null;

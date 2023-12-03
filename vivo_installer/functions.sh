@@ -12,7 +12,7 @@ logf_print() {
   test -n "$_rt" && test "$_rt" -eq 0 && _mk="I" || _mk="E";
   $TEST && _mk="$_rt";
   test "$_rt" -eq 255 && _mk="I" 
-  test "$_rt" -ne 0 && $BINPATH/cmd -l 2>/dev/null | grep -q vibrator && $BINPATH/cmd vibrator vibrate 300;
+  test "$_rt" -ne 0 && $BINPATH/cmd -l 2>/dev/null | grep -q vibrator && $BINPATH/cmd vibrator vibrate 50;
   printf "%.18s%6s%6s %s : %s #> %s\n" "$(date +"%m-%d %T.%N")" "$$" "$!" "$_mk" "$MODID" "$*";
 }
 
@@ -39,7 +39,7 @@ db_get() {
 }
 
 srv_ready_cmd() {
-  while ! $BINPATH/service list | grep -qi "android.*${3:-I${1}Manager}"; do sleep 0.02; done;
+  test "$1" = "data" || while ! $BINPATH/service list | grep -qi "android.*${3:-I${1}Manager}"; do sleep 0.02; done;
   $BINPATH/svc "$1" "$2" 2>&1 >/dev/null;
   logf_print "$?" "+ svc "$1" "$2"";
 }
@@ -56,9 +56,9 @@ get_data_app() {
     $BINPATH/pm list packages -f 2>/dev/null | grep -F ".apk=$app" | sed -ne "s|^package:$pa\(.*\)${fn:-base.apk}=[^=]*$|$pa\1|p";
   else
     if test -z "$fn"; then
-      find "${pa:-"/data/app"}" -mindepth ${dep:-2} -maxdepth ${dep:-2} -type d -name "$app" 2>/dev/null;
+      find "${pa:-"/data/app"}" -mindepth ${dep:-1} -maxdepth ${dep:-2} -type d -name "$app" 2>/dev/null;
     else
-      find "${pa:-"/data/app"}" -mindepth ${dep:-2} -maxdepth ${dep:-2} -type f -name "$fn" 2>/dev/null;
+      find "${pa:-"/data/app"}" -mindepth ${dep:-1} -maxdepth ${dep:-2} -type f -name "$fn" 2>/dev/null;
     fi
   fi
 }
@@ -84,9 +84,9 @@ hard_install() {
   split=$(cd ".$apk" && find . -mindepth 1 -maxdepth 1 -type f -name "*.apk" -print | grep -vFx "./$pn.apk");
 #  if test -n "$split"; then
   if test "$app" != "com.android.packageinstaller"; then
-    iid=$(${BINPATH}/pm install-create -r -t -f -d -g -i "$MODID" --install-reason 3 2>/dev/null | sed 's/[^0-9]//g');
+    iid=$(${BINPATH}/pm install-create -r -t -f -d -g -i "$MODID" 2>/dev/null | sed 's/[^0-9]//g');
     test -z "$iid" && {
-      logf_print 1 "! $app | pm install-create -r -t -f -d -g -i "$MODID" --install-reason 3";
+      logf_print 1 "! $app | pm install-create -r -t -f -d -g -i "$MODID"";
       return 0;
     }
     wid=0;
@@ -98,15 +98,15 @@ hard_install() {
     ${BINPATH}/pm install-commit "$iid" >/dev/null;
     rt=$?;
     test "$rt" -eq 0 || ${BINPATH}/pm install-abandon "$iid";
-    logf_print "$rt" "+ $app | pm install-split -r -t -f -d -g -i "$MODID" --install-reason 3 .${apk}/$wid:{"./$pn.apk" "$split"}";
+    logf_print "$rt" "+ $app | pm install-split -r -t -f -d -g -i "$MODID" .${apk}/$wid:{"./$pn.apk" "$split"}";
   else
-    ${BINPATH}/pm install -r -t -f -d -g -i "$MODID" --install-reason 3 ".${apk}/${pn}.apk" >/dev/null;
+    ${BINPATH}/pm install -r -t -f -d -g -i "$MODID" ".${apk}/${pn}.apk" >/dev/null;
     rt=$?;
-    logf_print "$?" "+ $app | pm install -r -t -f -d -g -i "$MODID" --install-reason 3 .${apk}/${pn}.apk";
+    logf_print "$?" "+ $app | pm install -r -t -f -d -g -i "$MODID" .${apk}/${pn}.apk";
   fi
   ndata=$(get_data_app "$app-*" "/data/app");
   if test -n "$ndata"; then
-    data=$(realpath "$ndata/..");
+    data=$(realpath "$ndata" 2>/dev/null);
     if test "$rt" -eq 0 && test ! -f "./$app"; then
       is_realpath "$data" "/data/app/" || logf_print "$?" "! $app | goes wrong, dir log skiped!" && return 0;
       record_dir "$data";
@@ -189,7 +189,7 @@ cat | while read -r line; do
   pn="fix_$(echo "$app"|sed 's/\./_/g')";
   type "$pn" 2>&1 >/dev/null && $pn "$app" "$apk";
   pn=$(get_data_app "$app-*" "/data/app/");
-  pn=$(realpath "$pn/..");
+  pn=$(realpath "$pn" 2>/dev/null);
   if is_sys_app "$app" && is_realpath "$pn" "/data/app"; then
     if test -f "./rm_$app"; then
       rm -rf "$pn" 2>/dev/null;
@@ -224,7 +224,7 @@ DC=10;BS=1;
 clean_dmesg() {
 local bn=$1 id=$2;
 test -d "%bn" && logf_print 255 "SELinux: dont messup." && return;
-awk 'BEGIN{FS="]";epoch="["ok=0;split("permissive=,ksys_umount,logd,NetlinkEvent:,VIVO_TS,_VOTER,_charger,do_mount,_vote:,pinctrl,swrm_,bolero",a ,",");}
+awk 'BEGIN{FS="]";epoch="[";ok=0;split("permissive=,ksys_umount,logd,NetlinkEvent:,VIVO_TS,_VOTER,_charger,do_mount,_vote:,pinctrl,swrm_,bolero",a ,",");}
   /^\[[ 0-9.]*\]/{ok=0; if($1 > epoch) {epoch=$1; ok=1; for(i in a) {if(match($0, a[i]) != 0) {ok=0;break;}}}}
   /.*/{ if(ok){print;}}' $bn.* > ./dmesg$id
 rm -f $bn.* 2>/dev/null;
@@ -232,7 +232,7 @@ logf_print $? "SELinux: dmesg: $MODDIR/dmesg$id";
 }
 while $NONSTOP || test "$COUNTOUT" -lt 300; do
   COUNTOUT=$((COUNTOUT + 1));
-  $BINPATH/logcat 2>/dev/null | grep " avc: " \
+  $BINPATH/logcat -d 2>/dev/null | grep " avc: " \
     | sed -e '/ dev=[^=]*fs" /d' -e '/ scontext=u:r:logd:/d' -e 's/ino=\([^ ]*\) //g' -e 's/pid=\([^ ]*\) //g' | sort | uniq \
     | sed -ne 's/^.* avc: *\([^ ]*\).*{\([^}]*\)}\(.*\)scontext=u:r:\([^:]*\).* tcontext=u:[^:]*:\([^:]*\).*tclass=\([^ ]*\).*\(permissive=.*\)$/\3 \1 \7 TODO: allow \4 \5 \6 {\2}/p' \
     | while read -r LINE;

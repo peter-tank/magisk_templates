@@ -1,0 +1,123 @@
+for  denied permissive=1 TODO: allow init hwservicemanager binder { call }
+for  denied permissive=1 TODO: allow init hwservicemanager binder { transfer }
+for  denied permissive=1 TODO: allow init init netlink_route_socket { bind }
+for  denied permissive=1 TODO: allow init init netlink_route_socket { create }
+for  denied permissive=1 TODO: allow init init netlink_route_socket { getattr }
+for  denied permissive=1 TODO: allow init init netlink_route_socket { read }
+for  denied permissive=1 TODO: allow init init netlink_route_socket { setopt }
+for  denied permissive=1 TODO: allow init init netlink_route_socket { write }
+for  denied permissive=1 TODO: allow init init socket { create }
+for  denied permissive=1 TODO: allow init init socket { read }
+for  denied permissive=1 TODO: allow init init socket { write }
+for  denied permissive=1 TODO: allow system_server init binder { call }
+for  denied permissive=1 TODO: allow system_server init binder { transfer }
+for capability=36  denied permissive=1 TODO: allow init init capability2 { block_suspend }
+for comm=4173796E635461736B202331 name="pagetypeinfo" dev="proc"  denied permissive=1 TODO: allow system_app proc_pagetypeinfo file { read }
+for comm=4173796E635461736B202331 path="/data/nfc/nfaStorage.bin1" dev="mmcblk0p41"  denied permissive=1 TODO: allow nfc system_data_file file { open }
+for comm=4173796E635461736B202331 path="/proc/pagetypeinfo" dev="proc"  denied permissive=1 TODO: allow system_app proc_pagetypeinfo file { getattr }
+for comm=4173796E635461736B202331 path="/proc/pagetypeinfo" dev="proc"  denied permissive=1 TODO: allow system_app proc_pagetypeinfo file { open }
+for interface=android.hardware.drm::IDrmFactory sid=u:r:init:s0  denied permissive=1 TODO: allow init hal_drm_hwservice hwservice_manager { add }
+for interface=android.hardware.light::ILight sid=u:r:init:s0  denied permissive=1 TODO: allow init hal_light_hwservice hwservice_manager { add }
+for interface=android.hardware.memtrack::IMemtrack sid=u:r:priv_app:s0:c512,c768  denied permissive=1 TODO: allow priv_app hal_memtrack_hwservice hwservice_manager { find }
+for interface=android.hardware.power::IPower sid=u:r:init:s0  denied permissive=1 TODO: allow init hal_power_hwservice hwservice_manager { add }
+for interface=android.hidl.base::IBase sid=u:r:init:s0  denied permissive=1 TODO: allow init hidl_base_hwservice hwservice_manager { add }
+for interface=com.quicinc.cne.api::IApiService sid=u:r:init:s0  denied permissive=1 TODO: allow init default_android_hwservice hwservice_manager { add }
+for interface=vendor.mokee.livedisplay::IPictureAdjustment sid=u:r:init:s0  denied permissive=1 TODO: allow init hal_mokee_livedisplay_hwservice hwservice_manager { add }
+for interface=vendor.mokee.touch::IKeyDisabler sid=u:r:init:s0  denied permissive=1 TODO: allow init hal_mokee_touch_hwservice hwservice_manager { add }
+for kmod="fs-cpuset"  denied permissive=1 TODO: allow init kernel system { module_request }
+for name="2106" dev="proc"  denied permissive=1 TODO: allow hwservicemanager init dir { search }
+for name="adsp.mdt" dev="mmcblk0p37"  denied permissive=1 TODO: allow ueventd firmware_file file { read }
+for name="bd_addr.txt" dev="mmcblk0p7"  denied permissive=1 TODO: allow toolbox unlabeled file { setattr }
+for name="current" dev="proc"  denied permissive=1 TODO: allow hwservicemanager init file { read }
+for name="devices" dev="proc"  denied permissive=1 TODO: allow untrusted_app proc file { read }
+for name="drivers" dev="proc"  denied permissive=1 TODO: allow untrusted_app proc_tty_drivers file { read }
+for name="mcfg_hw" dev="mmcblk0p37"  denied permissive=1 TODO: allow toolbox firmware_file dir { read }
+for name="mcfg_hw.mbn"  denied permissive=1 TODO: allow toolbox system_data_file file { create }
+for name="mcfg_hw.mbn" dev="mmcblk0p37"  denied permissive=1 TODO: allow toolbox firmware_file file { read }
+for name="modules" dev="proc"  denied permissive=1 TODO: allow untrusted_app proc_modules file { read }
+for name="nav_left" dev="proc"  denied permissive=1 TODO: allow init proc file { write }
+for name="nav_middle" dev="proc"  denied permissive=1 TODO: allow system_server proc file { read }
+for name="qcril.db" dev="mmcblk0p41"  denied permissive=1 TODO: allow rild system_data_file file { write }
+for name="qcril.db-journal" dev="mmcblk0p41"  denied permissive=1 TODO: allow rild system_data_file dir { remove_name }
+for name="qcril.db-journal" dev="mmcblk0p41"  denied permissive=1 TODO: allow rild system_data_file file { unlink }
+for name="qcril_backup.db-journal"  denied permissive=1 TODO: allow rild system_data_file dir { add_name }
+for name="qcril_backup.db-journal"  denied permissive=1 TODO: allow rild system_data_file file { create }
+for name="radio" dev="mmcblk0p41"  denied permissive=1 TODO: allow rild system_data_file dir { write }
+for name="sdcard"  denied permissive=1 TODO: allow init tmpfs lnk_file { create }
+for name="smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { read }
+for name="smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { write }
+for name="wlan_mac.txt" dev="mmcblk0p7"  denied permissive=1 TODO: allow hal_wifi_default unlabeled file { read }
+for name=716D75785F636C69656E745F736F636B657420202020373931  denied permissive=1 TODO: allow init socket_device sock_file { create }
+for name=716D75785F636C69656E745F736F636B657420202033353735  denied permissive=1 TODO: allow system_server socket_device dir { add_name }
+for name=716D75785F636C69656E745F736F636B657420202033353735  denied permissive=1 TODO: allow system_server socket_device sock_file { create }
+for path="/data/dalvik-cache/arm64/system@priv-app@MKParts@MKParts.apk@classes.dex" dev="mmcblk0p41"  denied permissive=1 TODO: allow system_server dalvikcache_data_file file { execute }
+for path="/data/data/com.android.vending.billing.InAppBillingService.CRAC/lp/xposed" dev="mmcblk0p41"  denied permissive=1 TODO: allow system_server media_rw_data_file file { open }
+for path="/data/lp/lp_utils" dev="mmcblk0p41"  denied permissive=1 TODO: allow untrusted_app_25 system_data_file file { open }
+for path="/data/lp/xposed" dev="mmcblk0p41"  denied permissive=1 TODO: allow untrusted_app_25 system_data_file file { open }
+for path="/data/misc/radio/modem_config/mcfg_hw/generic/common/default/default/mcfg_hw.mbn" dev="mmcblk0p41"  denied permissive=1 TODO: allow toolbox system_data_file file { read write open }
+for path="/data/misc/radio/qcril.db" dev="mmcblk0p41" ioctlcmd=f50c  denied permissive=1 TODO: allow rild system_data_file file { ioctl }
+for path="/dev/socket/property_service"  denied permissive=1 TODO: allow priv_app init unix_stream_socket { connectto }
+for path="/dev/socket/property_service"  denied permissive=1 TODO: allow toolbox init unix_stream_socket { connectto }
+for path="/firmware/image/adsp.mdt" dev="mmcblk0p37"  denied permissive=1 TODO: allow ueventd firmware_file file { getattr }
+for path="/firmware/image/adsp.mdt" dev="mmcblk0p37"  denied permissive=1 TODO: allow ueventd firmware_file file { open }
+for path="/firmware/image/modem_pr/mcfg/configs/mcfg_hw" dev="mmcblk0p37"  denied permissive=1 TODO: allow toolbox firmware_file dir { open }
+for path="/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/default/default/mcfg_hw.mbn" dev="mmcblk0p37"  denied permissive=1 TODO: allow toolbox firmware_file file { getattr }
+for path="/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/default/default/mcfg_hw.mbn" dev="mmcblk0p37"  denied permissive=1 TODO: allow toolbox firmware_file file { open }
+for path="/persist/bd_addr.txt" dev="mmcblk0p7"  denied permissive=1 TODO: allow toolbox unlabeled file { getattr }
+for path="/persist/wlan_mac.txt" dev="mmcblk0p7"  denied permissive=1 TODO: allow hal_wifi_default unlabeled file { open }
+for path="/proc/2106/attr/current" dev="proc"  denied permissive=1 TODO: allow hwservicemanager init file { open }
+for path="/proc/bus/input/devices" dev="proc"  denied permissive=1 TODO: allow untrusted_app proc file { open }
+for path="/proc/filesystems" dev="proc"  denied permissive=1 TODO: allow init proc_filesystems file { getattr }
+for path="/proc/irq/128/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/216/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/216/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/222/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/222/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/224/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/224/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/224/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { read open }
+for path="/proc/irq/240/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/240/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/276/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/276/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/35/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/35/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/48/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/48/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/irq/51/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { getattr }
+for path="/proc/irq/51/smp_affinity" dev="proc"  denied permissive=1 TODO: allow init proc file { open }
+for path="/proc/keypad/nav_middle" dev="proc"  denied permissive=1 TODO: allow system_server proc file { getattr }
+for path="/proc/keypad/nav_middle" dev="proc"  denied permissive=1 TODO: allow system_server proc file { open }
+for path="/proc/modules" dev="proc"  denied permissive=1 TODO: allow untrusted_app proc_modules file { open }
+for path="/proc/tty/drivers" dev="proc"  denied permissive=1 TODO: allow untrusted_app proc_tty_drivers file { open }
+for path="/system/bin/sh" dev="mmcblk0p40"  denied permissive=1 TODO: allow init shell_exec file { execute_no_trans }
+for path="/system/vendor/bin/hw/android.hardware.drm@1.1-service.clearkey" dev="mmcblk0p40"  denied permissive=1 TODO: allow init vendor_file file { execute_no_trans }
+for service=display.qservice uid=1000  denied permissive=1 TODO: allow surfaceflinger default_android_service service_manager { add }
+for service=display.qservice uid=1000  denied permissive=1 TODO: allow surfaceflinger default_android_service service_manager { find }
+for service=extphone uid=1001  denied permissive=1 TODO: allow radio default_android_service service_manager { add }
+for service=extphone uid=10010  denied permissive=1 TODO: allow platform_app default_android_service service_manager { find }
+for service=vendor.qcom.PeripheralManager uid=1000  denied permissive=1 TODO: allow init default_android_service service_manager { add }
+for service=vendor.qcom.PeripheralManager uid=1000  denied permissive=1 TODO: allow init default_android_service service_manager { find }
+for service=vendor.qcom.PeripheralManager uid=1000  denied permissive=1 TODO: allow system_server default_android_service service_manager { find }
+for service=vendor.qcom.PeripheralManager uid=1001  denied permissive=1 TODO: allow rild default_android_service service_manager { find }
+for name="proto" dev="proc"  denied permissive=1 TODO: allow init proc file { setattr }
+for  denied permissive=1 TODO: allow init init socket { bind }
+for capability=10  denied permissive=1 TODO: allow init init capability { net_bind_service }
+for  denied permissive=1 TODO: allow init init netlink_route_socket { nlmsg_read }
+for name="dsds" dev="mmcblk0p41"  denied permissive=1 TODO: allow toolbox system_data_file dir { write }
+for name="commerci"  denied permissive=1 TODO: allow toolbox system_data_file dir { add_name }
+for name="commerci"  denied permissive=1 TODO: allow toolbox system_data_file dir { create }
+for name="commerci" dev="mmcblk0p41"  denied permissive=1 TODO: allow toolbox system_data_file dir { read }
+for path="/data/system/perfd/default_values" dev="mmcblk0p41"  denied permissive=1 TODO: allow toolbox system_data_file file { getattr }
+for name="perfd" dev="mmcblk0p41"  denied permissive=1 TODO: allow toolbox system_data_file dir { write }
+for name="default_values" dev="mmcblk0p41"  denied permissive=1 TODO: allow toolbox system_data_file dir { remove_name }
+for name="default_values" dev="mmcblk0p41"  denied permissive=1 TODO: allow toolbox system_data_file file { unlink }
+for  denied permissive=1 TODO: allow system_app init binder { call }
+for  denied permissive=1 TODO: allow mediadrmserver init binder { call }
+for  denied permissive=1 TODO: allow init init rawip_socket { create }
+for lport=255  denied permissive=1 TODO: allow init init rawip_socket { getopt }
+for  denied permissive=1 TODO: allow rild servicemanager binder { call }
+for name="642" dev="proc"  denied permissive=1 TODO: allow servicemanager rild dir { search }
+for name="current" dev="proc"  denied permissive=1 TODO: allow servicemanager rild file { read }
+for path="/dev/socket/netd"  denied permissive=1 TODO: allow init netd unix_stream_socket { connectto }
+for  denied permissive=1 TODO: allow hwservicemanager init process { getattr }
