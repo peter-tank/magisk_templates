@@ -15,3 +15,4 @@ LOGF=/dev/stdout;
 
 # pm uninstall-system-updates
 wait_boot_complete && test -w "$MODPATH/system" && grep -v "^#" $MODPATH/pre_install.app | install_apk 2>&1
+wait_boot_complete && test -w "$MODPATH/system/tts/google" && install_tts_voice 2>&1

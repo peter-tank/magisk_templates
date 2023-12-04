@@ -266,7 +266,7 @@ fi
 [ -f "$MODPATH/pre_install.sh" ] && . $MODPATH/pre_install.sh
 
 #[ -d $MODPATH/system/priv-app ] && priv_perm_recursive $MODPATH/system/priv-app 0 0 0755 0644 u:object_r:system_file:s0
-for dir in etc framework apex priv-app app system_ext vendor custom vgc-common usr; do
+for dir in etc framework apex priv-app app system_ext vendor custom vgc-common usr tts; do
   [ -d $MODPATH/system/$dir ] && set_perm_recursive $MODPATH/system/$dir 0 0 0755 0644 u:object_r:system_file:s0
 done
 for dir in "" system_ext; do

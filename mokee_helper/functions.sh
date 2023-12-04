@@ -304,3 +304,23 @@ vivo_charger() {
   logf_print "$?" "+ setprop sys.demo.no_charge_protect 2";
   write /sys/class/cms_class/exhibition_mode 0;
 }
+
+install_tts_voice() {
+  local base src zip ns lp;
+  base="/data/user_de/0/com.google.android.tts/files/superpacks";
+  src="./system/tts/google";
+  test -w "$base" || retrun 0;
+  perm=$(stat -c "%u:%u" "$base");
+  find "$src" -type f -name "*.zvoice" | while read -r zip; do
+    ns=$(basename "${zip}");
+    lp=${ns%.*};
+    ns=${lp%-x-*};
+    mkdir -p "$base/$ns/$lp";
+    unzip "$zip" -qd "$base/$ns/$lp";
+    logf_print $? "+ zvoice | $ns/$lp: $zip";
+    chown -R $perm "$base/$ns";
+    chcon -R --reference "$base" "$base/$ns";
+    chmod -R 0700 "$base/$ns";
+    record_dir "$base/$ns";
+  done
+}

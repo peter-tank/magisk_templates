@@ -1,11 +1,20 @@
---- ./tsu.orig	2023-11-20 09:17:34.046639377 +0800
-+++ ../usr/bin/tsu	2023-11-20 09:22:09.622639272 +0800
+--- tsu.orig	2023-11-20 09:17:34.046639377 +0800
++++ ../usr/bin/tsu	2023-12-05 02:48:16.136782856 +0800
+@@ -88,7 +88,7 @@
+ #ANDROID_ASROOT_SYSPATHS="/bin:/xbin"
+ 
+ # Some constants that may change in future.
+-BB_MAGISK="/sbin/.magisk/busybox"
++BB_MAGISK="/data/adb/magisk/busybox"
+ 
+ # Options parsing
+ 
 @@ -278,7 +278,7 @@
  	STARTUP_SCRIPT="$ROOT_SHELL"
  fi
  
 -SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su")
-+SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/product/bin/suu")
++SU_BINARY_SEARCH=("/system/xbin/su" "/system/bin/su" "/system/bin/suu")
  
  # On some systems with other root methods `/sbin` is inacessible.
  if [[ -x "/sbin" ]]; then
@@ -14,10 +23,20 @@
  ### ----- MAGISKSU
  # shellcheck disable=SC2117
 -if [[ -z "$SKIP_SBIN" && "$(/sbin/su -v)" == *"MAGISKSU" ]]; then
-+if [[ -z "$SKIP_SBIN" && "$(/product/bin/suu -v)" == *"MAGISKSU" ]]; then
++if [[ -z "$xSKIP_SBIN" && "$(/system/bin/suu -v)" == *"MAGISKSU" ]]; then
  	# We are on Magisk su
 -	su_args=("/sbin/su")
-+	su_args=("/product/bin/suu")
++	su_args=("/system/bin/suu")
  	[[ -z "$SWITCH_USER" ]] || su_args+=("$SWITCH_USER")
  
  	if [[ -n "$ENVIRONMENT_PRESERVE" ]]; then
+@@ -319,7 +319,7 @@
+ 		su_args+=("--preserve-environment")
+-		su_cmdline="PATH=$BB_MAGISK:$PATH $ENV_BUILT $STARTUP_SCRIPT"
++		su_cmdline="$BB_MAGISK:$PATH $ENV_BUILT $STARTUP_SCRIPT"
+ 	else
+-		su_cmdline="PATH=$BB_MAGISK env -i $ENV_BUILT $STARTUP_SCRIPT"
++		su_cmdline="$BB_MAGISK env -i $ENV_BUILT $STARTUP_SCRIPT"
+ 	fi
+ 	su_args+=("-c")
+ 	exec "${su_args[@]}" "${su_cmdline}"

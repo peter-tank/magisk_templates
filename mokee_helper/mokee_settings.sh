@@ -36,9 +36,8 @@ db_set 'global' 'upload_apk_enable' '0';
 db_set 'system' 'system_locales' 'en-US,bo-IN,zh-Hant-TW,zh-Hans-CN';
 db_set 'secure' 'default_input_method' 'kl.ime.oh/.I';
 db_set 'secure' 'enabled_input_methods' 'org.videomap.droidmoteclient/.DroidMoteClientIme:kl.ime.oh/.I:com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME';
-db_set 'secure' 'tts_default_locale' 'com.iflytek.vflynote:zh_CN';
-db_set 'secure' 'tts_default_synth' 'com.iflytek.vflynote';
-db_set 'secure' 'voice_recognition_service' 'com.iflytek.vflynote/com.iflytek.iatservice.SpeechService';
+db_set 'secure' 'tts_default_locale' 'com.google.android.tts:cmn_CN';
+db_set 'secure' 'tts_default_synth' 'com.google.android.tts';
 db_set 'secure' 'voice_interaction_service' '';
 
 logf_print $? '- other settings...';
