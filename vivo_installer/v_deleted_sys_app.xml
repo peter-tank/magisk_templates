@@ -50,6 +50,7 @@ com.vivo.globalsearch
 com.vivo.health
 com.vivo.hiboard
 com.vivo.hybrid
+com.vivo.imanager
 com.vivo.magazine
 com.vivo.multinlp
 com.vivo.pem
@@ -69,4 +70,6 @@ com.vivo.wallet
 com.vivo.sdkplugin
 com.vivo.game
 #com.vivo.weather
+#com.vivo.dream.weather
+#com.vivo.weather.provider
 com.yozo.vivo.office

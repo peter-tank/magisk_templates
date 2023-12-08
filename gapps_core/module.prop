@@ -1,7 +1,7 @@
 id=opengapps_core
-name=MagiskGApps-V1.1 Core
+name=microG-GApps installer
 version=1.0
 versionCode=2022
 author=tank.dr
-description=Install OpenGapps (MagiskGApps-V1.1)
+description=Install microG-GApps v0.2.28.231657
 updateJson=

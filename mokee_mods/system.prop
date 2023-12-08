@@ -1,0 +1,6 @@
+#ro.device.demo=1
+#ro.adb.secure=0
+#ro.secure=0
+#persist.config.usb.config=adb
+#persist.sys.usb.config=adb
+#ro.provisioned=1

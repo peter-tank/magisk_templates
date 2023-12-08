@@ -52,8 +52,8 @@ get_data_app() {
   local app pa dep;
   app="$1"; pa="$2"; dep="$3"; fn="$4";
 
-  if $BINPATH/pm list packages 2>/dev/null | grep -qFx "package:$app"; then
-    $BINPATH/pm list packages -f 2>/dev/null | grep -F ".apk=$app" | sed -ne "s|^package:$pa\(.*\)${fn:-base.apk}=[^=]*$|$pa\1|p";
+  if $BINPATH/pm list packages 2>/dev/null | grep -q "package:$app$"; then
+    $BINPATH/pm list packages -f 2>/dev/null | grep ".apk=$app$" | sed -ne "s|^package:$pa\(.*\)${fn:-base.apk}=[^=]*$|$pa\1|p";
   else
     if test -z "$fn"; then
       find "${pa:-"/data/app"}" -mindepth ${dep:-1} -maxdepth ${dep:-2} -type d -name "$app" 2>/dev/null;
@@ -108,13 +108,17 @@ hard_install() {
   if test -n "$ndata"; then
     data=$(realpath "$ndata" 2>/dev/null);
     if test "$rt" -eq 0 && test ! -f "./$app"; then
-      is_realpath "$data" "/data/app/" || logf_print "$?" "! $app | goes wrong, dir log skiped!" && return 0;
-      record_dir "$data";
-      logf_print "$?" "+ $app | dir log to uninstaller: $data";
+      if is_realpath "$data" "/data/app/"; then
+        record_dir "$data";
+        logf_print "$?" "+ $app | dir log to uninstaller: $data";
+      else
+        logf_print "$?" "! $app | goes wrong, dir log skiped!";
+      fi
     fi
   else
     logf_print "$?" "! $app | not installed to /data/app, got: $(get_data_app "$app" "" "" ".apk").apk";
-    #rm -f "./data_$app";
+    rm -rf /data/system/package_cache/* 2>/dev/null;
+    logf_print "$?" "! $app | rm -rf /data/system/package_cache/*";
   fi
 }
 
@@ -303,4 +307,25 @@ vivo_charger() {
   write /sys/class/cms_class/keep_chg_soc 85;
   logf_print "$?" "+ setprop sys.demo.no_charge_protect 2";
   write /sys/class/cms_class/exhibition_mode 0;
+}
+
+install_tts_voice() {
+  local base src zip ns lp dst perm;
+  base="/data/user_de/0/com.google.android.tts";
+  src="./system/tts/google";
+  test -w "$base" || return 0;
+  perm=$(stat -c "%u:%u" "$base");
+  find "$src" -type f -name "*.zvoice" | while read -r zip; do
+    ns=$(basename "${zip}");
+    lp=${ns%.zvoice};
+    ns=$(basename $(dirname "$zip"));
+    dst="files/superpacks/$ns/$lp";
+    mkdir -p "$base/$dst";
+    unzip "$zip" -qod "$base/$dst";
+    logf_print $? "+ zvoice | $ns/$lp: $zip";
+    chown -R $perm "$base/files";
+    chcon -R --reference "$base" "$base/files";
+    chmod -R 0700 "$base/files";
+    record_dir "$base/$dst";
+  done
 }

@@ -1,0 +1,1 @@
+/system/app/ViaBrowser,mark.via.gp

@@ -39,14 +39,14 @@ wait_boot_complete && shutdown_wireless 2>&1 >> "$LOGF" &
 
 wait_boot_complete && {
 [ -f "$MODPATH/vivo_settings.sh" ] && . $MODPATH/vivo_settings.sh;
-logf_print 0 "- waiting vivo crash...";
+logf_print 0 "- waiting system-server crash...";
 $TEST || $BINPATH/svc "system-server" "wait-for-crash" >/dev/null;
 _rt=$?;
 if test "$_rt" -eq 0; then
-  $TEST && logf_print "$_rt" "- crash wait skiped for on device script testing." || logf_print "$_rt" "- vivo shutdown gracefully.";
+  $TEST && logf_print "$_rt" "- crash wait skiped for on device script testing." || logf_print "$_rt" "- system-server shutdown gracefully.";
 else
   touch disable;
-  logf_print "$_rt" "! vivo crashed: $_rt, auto disable module: $MODID"
+  logf_print "$_rt" "! system-server crashed: $_rt, auto disable module: $MODID"
 fi
 } 2>&1 >> "$LOGF" &
 

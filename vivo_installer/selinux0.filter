@@ -1,0 +1,18 @@
+for  denied permissive=0 TODO: allow crash_dump init process { ptrace }
+for capability=5  denied permissive=0 TODO: allow fsck fsck capability { kill }
+for capability=5  denied permissive=0 TODO: allow vdc vdc capability { kill }
+for  denied permissive=0 TODO: allow tee tee qipcrtr_socket { create }
+for capability=5  denied permissive=0 TODO: allow kernel kernel capability { kill }
+for  denied permissive=0 TODO: allow init vivo_hal_fingerprint process { ptrace }
+for name="printk" dev="proc"  denied permissive=0 TODO: allow vendor_qti_init_shell qg_log_proc file { write }
+for name="/" dev="sda20"  denied permissive=0 TODO: allow vivo_em_svr_vendor cache_file dir { search }
+for path="/proc/cmdline" dev="proc"  denied permissive=0 TODO: allow zygote proc_cmdline file { open }
+for name="pem" dev="proc"  denied permissive=0 TODO: allow vendor_thermal-engine proc_pem dir { search }
+for name="/" dev="dm-11"  denied permissive=0 TODO: allow atcid_common system_data_root_file dir { write }
+for name="/" dev="dm-11"  denied permissive=0 app=com.bbk.theme TODO: allow platform_app system_data_root_file dir { setattr }
+for name="/" dev="dm-5"  denied permissive=0 app=com.bbk.theme TODO: allow platform_app rootfs dir { read }
+for path="/data/bbkcore/cms_2_100.txt" dev="dm-11"  denied permissive=0 app=com.bbk.theme TODO: allow platform_app cms_key_file file { getattr }
+for path="/proc/772" dev="proc"  denied permissive=0 TODO: allow untrusted_app zygote dir { getattr }
+for capability=19  denied permissive=0 TODO: allow vivo_daemon vivo_daemon capability { sys_ptrace }
+for name="/" dev="dm-11"  denied permissive=0 TODO: allow platform_app system_data_root_file dir { setattr }
+for  denied permissive=0 TODO: allow system_app vendor_diag-router binder { call }

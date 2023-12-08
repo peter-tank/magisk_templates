@@ -109,7 +109,7 @@ prop_process() {
 ui_print ""
 ui_print "- "
 ui_print "- +-----+------+------------+"
-ui_print "- | Open Gapps | Android 11 |"
+ui_print "- | Micro gapp | Android 11 |"
 ui_print "- +-----+------+------------+"
 ui_print " "
 

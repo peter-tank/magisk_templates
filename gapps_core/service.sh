@@ -32,4 +32,8 @@ fix_com_google_android_apps_nexuslauncher() {
 wait_boot_complete && test -w "./system" && grep -v "^#" ./service.app | install_apk 2 >&1 >> "$LOGF" &
 # pm uninstall-system-updates
 
+wait_boot_complete && {
+[ -f "$MODPATH/vivo_settings.sh" ] && . $MODPATH/vivo_settings.sh;
+}
+
 #$TEST && exit 0;

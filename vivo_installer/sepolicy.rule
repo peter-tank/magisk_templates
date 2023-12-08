@@ -20,4 +20,6 @@
 #allow vendor_thermal-engine proc_pem dir { search }
 #allow vivo_daemon vivo_daemon capability { sys_ptrace }
 #allow vivo_em_svr_vendor cache_file dir { search }
-#allow zygote proc_cmdline file { open }
+#allow zygote proc_cmdline file { open read getattr }
+# org.skvalex.cr call recorder
+allow priv_app default_android_service service_manager { find }
